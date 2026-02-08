@@ -1,7 +1,24 @@
-# Import python packages
 import streamlit as st
+import pandas as pd
+from snowflake.connector import connect
+
+# Establish connection using secrets
+@st.cache_resource
+def get_connection():
+return connect(
+account=st.secrets["connections"]["snowflake"]["account"],
+user=st.secrets["connections"]["snowflake"]["user"],
+password=st.secrets["connections"]["snowflake"]["password"],
+warehouse=st.secrets["connections"]["snowflake"]["warehouse"],
+database=st.secrets["connections"]["snowflake"]["database"],
+schema=st.secrets["connections"]["snowflake"]["schema"]
+)
+
+
+# Import python packages
+#import streamlit as st
 #from snowflake.snowpark.context import get_active_session
-from snowflake.snowpark.functions import col
+#from snowflake.snowpark.functions import col
 
 # Write directly to the app
 st.title(":cup_with_straw: Customize Your Smoothie! :cup_with_straw:")
