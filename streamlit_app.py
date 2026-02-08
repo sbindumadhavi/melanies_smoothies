@@ -4,14 +4,14 @@ from snowflake.connector import connect
 
 # Establish connection using secrets
 @st.cache_resource
-def get_connection():
+  def get_connection():
 return connect(
-account=st.secrets["connections"]["snowflake"]["account"],
-user=st.secrets["connections"]["snowflake"]["user"],
-password=st.secrets["connections"]["snowflake"]["password"],
-warehouse=st.secrets["connections"]["snowflake"]["warehouse"],
-database=st.secrets["connections"]["snowflake"]["database"],
-schema=st.secrets["connections"]["snowflake"]["schema"]
+  account=st.secrets["connections"]["snowflake"]["account"],
+  user=st.secrets["connections"]["snowflake"]["user"],
+  password=st.secrets["connections"]["snowflake"]["password"],
+  warehouse=st.secrets["connections"]["snowflake"]["warehouse"],
+  database=st.secrets["connections"]["snowflake"]["database"],
+  schema=st.secrets["connections"]["snowflake"]["schema"]
 )
 
 
