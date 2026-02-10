@@ -3,6 +3,8 @@
 #  - snowflake
 #dependencies:
 #  - python=3.13.*
+streamlit
+snowflake-connector-python
 snowflake-snowpark-python
 streamlit
 requests
